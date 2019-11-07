@@ -53,7 +53,7 @@ public class StudentController {
                                                   @Valid @RequestBody Student studentDetails) throws ResourceNotFoundException {
 		Student student = studentRepository.findById(employeeId)
 				.orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
-
+                student.setBranch(studentDetails.getBranch());
 		student.setEmailId(studentDetails.getEmailId());
 		student.setLastName(studentDetails.getLastName());
 		student.setFirstName(studentDetails.getFirstName());
