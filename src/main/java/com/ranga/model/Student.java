@@ -15,15 +15,17 @@ public class Student {
 	private String firstName;
 	private String lastName;
 	private String emailId;
+	private String branch;
 	
 	public Student() {
 		
 	}
 	
-	public Student(String firstName, String lastName, String emailId) {
+	public Student(String firstName, String lastName, String emailId,String branch) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailId = emailId;
+		this.branch = branch;
 	}
 	
 	@Id
@@ -57,6 +59,13 @@ public class Student {
 	}
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
+	}
+	@Column(name = "branch", nullable =false)
+	public String getBranch(){
+	     return branch;
+	}
+	public void setBranch(String branch) {
+		this.branch = branch;
 	}
 
 	@Override
